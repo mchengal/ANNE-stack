@@ -19,7 +19,7 @@
                    ].join('\n')
             },
             {name: 'Show all relationships',
-            query: ['Match (n)-(r)-(m)',
+            query: ['Match n-[r]->m',
                    'Return n,r,m'
                    ].join('\n')},
             
