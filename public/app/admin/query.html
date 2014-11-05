@@ -10,7 +10,8 @@
                                 <form class="form-horizontal" role="form">
                                     <div class="form-group">
                                          <label  class="control-label">Sample Queries:</label>
-                                         <select ng-model="vm.query" class="form-control" ng-options="q.name for q in vm.sampleQueries"></select>
+                                         <select ng-model="vm.selectedQuery" class="form-control" ng-options="q.name for q in vm.sampleQueries"
+                                            ng-change="vm.query = vm.selectedQuery.query" ></select>
                                      </div>
                                 </form>
                                 
