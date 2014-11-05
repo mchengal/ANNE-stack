@@ -70,6 +70,7 @@
                     if (result.data.error==null){
                         vm.drugs.push({n:result.data.responseData});
                         log('Added: ' + vm.newDrugName);
+                        vm.newDrugName = null; vm.newDrugDescription = null;
                     }
                 });
            
@@ -107,6 +108,7 @@
                 .then(function(result){
                     getAllRelationships();
                     log('Relationship created');
+                    vm.relationshipFrom = null; vm.relationshipTo = null; vm.relation = null;
                 });
                 
         }
