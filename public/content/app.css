@@ -1,0 +1,14 @@
+/* app css stylesheet */
+
+body {
+  padding-top: 60px;
+}
+
+.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+.link {
+  stroke: #999;
+  stroke-opacity: 0.6;
+}

@@ -1,0 +1,119 @@
+﻿<section class="mainbar" data-ng-controller="create as vm">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="widget wblue">
+                    <div data-cc-widget-header title="Manage Drugs"
+                         allow-collapse="true"></div>
+                    <div class="widget-content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Add a Drug</h4>
+                                 <form class="form-horizontal" role="form">
+                                     <div class="form-group">
+                                         <label  class="control-label">Name:</label>
+                                         <input type="text" class="form-control" placeholder="Enter Drug Name"   data-ng-model="vm.newDrugName">
+                                     </div>
+                                     <div class="form-group">
+                                          <label  class="control-label">Description:</label>
+                                         <textarea class="form-control" rows="3" placeholder="Drug Description" ng-model="vm.newDrugDescription"></textarea>
+                                         
+                                     </div>
+                                      <div class="form-group">
+                                          <button class="btn btn-info" data-ng-click="vm.addDrug()"><i class="fa fa-pencil-square"></i>Add</button>
+                                      </div>
+                                 </form>
+                               
+                            </div>
+
+                            <div class="col-md-6">
+                                <h4>Delete a Drug</h4>
+                                <form class="form-horizontal" role="form">
+                                     <div class="form-group">
+                                         <label  class="control-label">Drugs:</label>
+                                         <select ng-model="vm.selectedDrugForDelete" class="form-control" ng-options="drug.n.data.name for drug in vm.drugs"></select>
+                                     </div>
+                                    
+                                      <div class="form-group">
+                                          <button class="btn btn-info" data-ng-click="vm.deleteDrug()"><i class="fa fa-pencil-square"></i>Delete</button>
+                                      </div>
+                                 </form>
+                               
+<!--                               {{vm.drugs}} -- {{vm.selectedDrugForDelete}}-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget-foot">
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Relationship section -->
+
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="widget wgreen">
+                    <div data-cc-widget-header title="Manage Relationships"
+                         allow-collapse="true"></div>
+                    <div class="widget-content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Add a Relationship</h4>
+                                 <form class="form-horizontal" role="form">
+                                     <div class="form-group">
+                                         <label  class="control-label">From:</label>
+                                         <select ng-model="vm.relationshipFrom" class="form-control" ng-options="drug.n.data.name for drug in vm.drugs"></select>
+                                     </div>
+                                    
+                                     <div class="form-group">
+                                         <label  class="control-label">Type:</label>
+                                         <select ng-model="vm.relation" class="form-control" ng-options="type for type in vm.relationshipTypes"></select>
+                                     </div>
+
+                                      <div class="form-group">
+                                         <label  class="control-label">To:</label>
+                                         <select ng-model="vm.relationshipTo" class="form-control" ng-options="drug.n.data.name for drug in vm.drugs"></select>
+                                     </div>
+                                     <div class="form-group">
+                                          <label  class="control-label">Description:</label>
+                                         <textarea class="form-control" rows="3" placeholder="Relationship Description" ng-model="vm.relationshipDescription"></textarea>
+                                         
+                                     </div>
+                                    
+                                      <div class="form-group">
+                                          <button class="btn btn-info" data-ng-click="vm.addRelationship()"><i class="fa fa-pencil-square"></i>Add Relationship</button>
+                                      </div>
+                                 </form>
+                               
+                            </div>
+
+                            <div class="col-md-6">
+                                <h4>Delete a Relationship</h4>
+                               <form class="form-horizontal" role="form">
+                                     <div class="form-group">
+                                         <label  class="control-label">Relationship:</label>
+                                         <select ng-model="vm.selectedRelationshipToDelete" class="form-control" ng-options="relation.n.data.name +'-' + relation.r.type + '->' + relation.m.data.name for relation in vm.relationships"></select>
+                                     </div>
+                                    
+                                      <div class="form-group">
+                                          <button class="btn btn-info" data-ng-click="vm.deleteRelationship()"><i class="fa fa-pencil-square"></i>Delete Relationship</button>
+                                      </div>
+                                 </form>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget-foot">
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</section>
