@@ -13,7 +13,7 @@
         vm.title = 'Ad-hoc Queries';
         vm.nodes = [];
         vm.sampleQueries = [
-            {name: 'Show all drigs',
+            {name: 'Show all drugs',
             query: ['Match (n)',
                    'Return n'
                    ].join('\n')
