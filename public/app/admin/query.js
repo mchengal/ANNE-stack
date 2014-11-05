@@ -12,7 +12,18 @@
         var vm = this;
         vm.title = 'Ad-hoc Queries';
         vm.nodes = [];
-        //vm.query = '';
+        vm.sampleQueries = [
+            {name: 'Show all drigs',
+            query: ['Match (n)',
+                   'Return n'
+                   ].join('\n')
+            },
+            {name: 'Show all relationships',
+            query: ['Match (n)-(r)-(m)',
+                   'Return n,r,m'
+                   ].join('\n')},
+            
+        ];
         vm.runQuery = runQuery;
         
         activate();
