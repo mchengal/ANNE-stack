@@ -10,3 +10,7 @@ $ npm install
 followed by
 
 $ node server.js
+
+Read more at http://www.42id.com/articles/anne-stack-angular-js-node-neo4j-and-express/
+
+Live example at http://anne.azurewebsites.net/
