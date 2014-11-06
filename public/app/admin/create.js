@@ -91,6 +91,7 @@
             function() {
                 var index=vm.drugs.indexOf(vm.selectedDrugForDelete);
                 vm.drugs.splice(index,1); 
+                getAllRelationships();
                 log('Deleted: ' + vm.selectedDrugForDelete.n.data.name);
 
             });
