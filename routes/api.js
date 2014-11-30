@@ -1,11 +1,39 @@
-﻿    /*
+    /*
      * Serve JSON to our AngularJS client
      */
 
 var neo4j = require('neo4j-js');
 var async = require('async');
 var neo4JUrl = 'http://interactions:C0z0OZ70Oh7MriQHeNB5@interactions.sb02.stations.graphenedb.com:24789/db/data/';
+var passport = require('passport');
+var jwt = require('jsonwebtoken');
 
+exports.signin = function(req, res, next) {
+	passport.authenticate('local', function(err, user, info) {
+		if (err || !user) {
+			res.status(400).send(info);
+		} else {
+			// Remove sensitive data before login
+			//user.password = undefined;
+			//user.salt = undefined;
+
+			req.login(user, function(err) {
+				if (err) {
+					res.status(400).send(err);
+				} else {
+                    
+                
+                  // We are sending the profile inside the token
+                  var token = jwt.sign(user, 'secret-anne', { expiresInMinutes: 60*5 });
+
+                  res.json({ token: token });
+
+				    //res.json(user);
+				}
+			});
+		}
+	})(req, res, next);
+};
 
 exports.createNode = function (req, res) {
     //JSON. stringify is only available in mordern browers.....

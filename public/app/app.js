@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
     'use strict';
     
     var app = angular.module('app', [
@@ -20,30 +20,27 @@
     // Handle routing errors and success events
     app.run(['$route',  function ($route) {
             // Include $route to kick start the router.
-        }]);        
+        }]);   
+    
+    app.factory('authInterceptor', function ($rootScope, $q, $window) {
+      return {
+          request: function (config) {
+              config.headers = config.headers || {};
+              if ($window.sessionStorage.token) {
+                  config.headers.Authorization = 'Bearer ' + $window.sessionStorage.token;
+              }
+              return config;
+          },
+          responseError: function (rejection) {
+              if (rejection.status === 401) {
+                  // handle the case where the user is not authenticated
+              }
+              return $q.reject(rejection);
+          }
+      };
+  });
+  app.config(function ($httpProvider) {
+      $httpProvider.interceptors.push('authInterceptor');
+  });
 })();
 
-//'use strict';
-
-//angular.module('myApp',['ngRoute', 
-//    'productConfigAdmin',
-//    'productConfigurator'
-//    ])
-//    .config(['$routeProvider', function($routeProvider) {
-//    $routeProvider
-//        .when('/admin', {
-//            templateUrl: 'app/admin/admin.html',
-//            controller: 'ProductNodesController'
-//        })
-//        .when('/query', {
-//            templateUrl: 'app/admin/query.html',
-//            controller: 'QueryController'
-//        })
-//        .when('/configurator', {
-//            templateUrl: 'app/configurator/configurator.html',
-//            controller: 'WizardController'
-//        })
-//        .otherwise({
-//            redirectTo: '/'
-//    });
-//}]);

@@ -1,28 +1,7 @@
-﻿<section id="dashboard-view" class="mainbar" data-ng-controller="dashboard as vm">
+<section id="dashboard-view" class="mainbar" data-ng-controller="dashboard as vm">
     <section class="matter">
         <div class="container">
-            <!--<div class="row">
-                <div class="col-md-12">
-                    <ul class="today-datas">
-                        <li class="blightblue">
-                            <div class="pull-left"><i class="fa fa-plane"></i></div>
-                            <div class="datas-text pull-right">
-                                <span class="bold">May 18 - 19, 2015</span> Castle Resort, Neverland
-                            </div>
-                            <div class="clearfix"></div>
-                        </li>
-
-                        <li class="borange">
-                            <div class="pull-left"><i class="fa fa-envelope"></i></div>
-                            <div class="datas-text pull-right">
-                                <span class="bold">{{vm.messageCount}}</span> Messages
-                            </div>
-                            <div class="clearfix"></div>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>-->
+            
             <div class="row">
                 <div class="col-md-6">
                     <div class="widget wblue">
@@ -44,6 +23,7 @@
                         <div class="widget-content text-left text-info">
                             Once you have the drugs created in the graph database, you can then specify the relationships between them by using the relationship form.
                             Select two drugs and the relationship - Interacts with or Alternative to - between them to create the relationship.
+                            <button ng-click='vm.signin()'>Sign In</button>  {{vm.message}}
                         </div>
                         <div class="widget-foot">
                             <div class="clearfix"></div>

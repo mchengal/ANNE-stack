@@ -1,16 +1,22 @@
 {
-  "name": "ProductConfigurator",
-  "version": "0.0.0",
-  "description": "Software to create product configurations - such as a customer building a new car",
+  "name": "ANNE Stck",
+  "version": "0.0.2",
+  "description": "Started project for creating application with AngularJS, Node JS, Neo4J and Express",
   "main": "app.js",
   "author": {
-    "name": "OperationRio",
+    "name": "42ID",
     "email": ""
   },
   "dependencies": {
     "express": "3.4.4",
     "neo4j-js": "0.0.7",
     "async": "~0.2.10",
+    "connect-flash": "0.1.1",
+    "passport":"0.2.1" ,
+    "passport-local": "1.0.0",
+    "passport-twitter": "1.0.2",
+    "express-jwt": "0.5.1",
+    "jsonwebtoken": "1.2.0",
     "selenium-webdriver": "~2.40.0"
   },
   "devDependencies": {

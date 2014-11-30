@@ -44,6 +44,7 @@
             logger: logger, // for accessibility
             textContains: textContains,
             $http: $http
+            
         };
 
         return service;
