@@ -22,7 +22,7 @@
             // Include $route to kick start the router.
         }]);   
     
-    app.factory('authInterceptor', function ($rootScope, $q, $window) {
+    app.factory('authInterceptor', function ($rootScope, $q, $window, $location) {
       return {
           request: function (config) {
               config.headers = config.headers || {};
@@ -35,6 +35,7 @@
               if (rejection.status === 401) {
                   // handle the case where the user is not authenticated
               }
+              $location.path('/login/unauth');
               return $q.reject(rejection);
           }
       };

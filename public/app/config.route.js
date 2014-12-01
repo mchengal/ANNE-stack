@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
     'use strict';
 
     var app = angular.module('app');
@@ -41,7 +41,6 @@
                     }
                 }
             },
-           
             {
                 url: '/admin/query',
                 config: {
@@ -52,7 +51,18 @@
                         content: '<i class="fa fa-crosshairs"></i> Run Ad-hoc queries'
                     }
                 }
+            },
+            {
+                url: '/login/unauth',
+                config: {
+                    title: 'unauth',
+                    templateUrl: 'app/login/unauth.html',
+                    settings: {
+                        nav: 5,
+                        content: '<i class="fa fa-crosshairs"></i> Unauthorized Access'
+                    }
+                }
             }
         ];
     }
-})();
+})()
