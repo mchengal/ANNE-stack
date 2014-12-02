@@ -1,4 +1,4 @@
-﻿<nav class="navbar navbar-fixed-top navbar-inverse">
+<nav class="navbar navbar-fixed-top navbar-inverse">
     <div class="navbar-header">
         <a href="/" class="navbar-brand"><span class="brand-title">ANNE - Angular JS, Node, Neo4J and Express Stack</span></a>
         <a class="btn navbar-btn navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -7,12 +7,13 @@
             <span class="icon-bar"></span>
         </a>
     </div>
-    <div class="navbar-collapse collapse">
+    <div class="navbar-collapse collapse" data-ng-controller="topnav as vm">
         <div class="pull-right navbar-logo">
+
             <ul class="nav navbar-nav pull-right">
                 <li>
                     <a href="http://www.42id.com/" target="_blank">
-                        42ID
+                        {{vm.username}}  42ID
                     </a>
                 </li>
                

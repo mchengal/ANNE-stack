@@ -21,14 +21,10 @@ exports.signin = function(req, res, next) {
 				if (err) {
 					res.status(400).send(err);
 				} else {
-                    
-                
                   // We are sending the profile inside the token
-                  var token = jwt.sign(user, 'secret-anne', { expiresInMinutes: 60*5 });
+                  var token = jwt.sign(user, 'secret-anne', { expiresInMinutes: 20 });
 
                   res.json({ token: token });
-
-				    //res.json(user);
 				}
 			});
 		}

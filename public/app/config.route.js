@@ -58,7 +58,6 @@
                     title: 'unauth',
                     templateUrl: 'app/login/unauth.html',
                     settings: {
-                        nav: 5,
                         content: '<i class="fa fa-crosshairs"></i> Unauthorized Access'
                     }
                 }
