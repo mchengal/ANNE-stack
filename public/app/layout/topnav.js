@@ -6,9 +6,9 @@
     function topnav(common, $window) {
         var vm = this;
         //this is used to parse the profile
-        vm.username = $window.username || 'Not logged in';
+        vm.username = $window.sessionStorage.username || 'Not logged in';
         common.$rootScope.$on('loginSuccess', function(event, data){
-             vm.username = $window.username;
+             vm.username = $window.sessionStorage.username;
         });
     }
 

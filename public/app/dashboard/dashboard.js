@@ -56,7 +56,7 @@
                 $window.isAuthenticated = true;
                 var encodedProfile = response.token.split('.')[1];
                 var profile = JSON.parse(url_base64_decode(encodedProfile));
-                $window.username = profile.username;
+                $window.sessionStorage.username = profile.username;
                 common.$rootScope.$broadcast('loginSuccess', {});
                 // And redirect to the index page
                 $location.path('/');
