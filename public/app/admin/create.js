@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
     'use strict';
 
     // Organize the controller name and dependencies here for easy recognition
@@ -70,7 +70,7 @@
                     if (result.data.error==null){
                         vm.drugs.push({n:result.data.responseData});
                         log('Added: ' + vm.newDrugName);
-                        vm.newDrugName = null; vm.newDrugDescription = null;
+                        vm.newDrugName = null; vm.newDrugDescription = '';
                     }
                 });
            
